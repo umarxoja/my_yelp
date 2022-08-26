@@ -1,0 +1,26 @@
+<%= form_with(model: restaurant) do |form| %>
+
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description, class: "form-control"%>
+  </div>
+
+  <div>
+    <%= form.label :city, style: "display: block" %>
+    <%= form.text_field :city,class: "form-control" %>
+  </div>
+
+  <%= form.number_field :user_id, id: :restaurant_user_id, value: current_user.id, type: :hidden %>
+
+
+
+  <div>
+    <%= form.submit class: "btn btn-primary", style: "margin-top: 10px" %>
+  </div>
+<% end %>
